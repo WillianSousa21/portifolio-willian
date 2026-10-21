@@ -1,0 +1,444 @@
+/* ================================
+   PORTFÓLIO - WILLIAN BRAGA
+   CSS para willian_index.html e willian_sobremim.html
+   ================================ */
+
+:root {
+    --fundo: #f3f6fb;
+    --superficie: #ffffff;
+    --texto: #202b3c;
+    --texto-suave: #5b6678;
+    --marinho: #17243b;
+    --marinho-claro: #243753;
+    --destaque: #19a7a1;
+    --destaque-escuro: #12817d;
+    --borda: #dce4ee;
+    --sombra: 0 12px 30px rgba(23, 36, 59, 0.08);
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--destaque-escuro);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--destaque);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--destaque);
+    outline-offset: 4px;
+}
+
+/* Cabeçalho e navegação */
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 0.85rem 1rem;
+    background: rgba(23, 36, 59, 0.97);
+    box-shadow: 0 5px 18px rgba(23, 36, 59, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nav a,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    color: #ffffff;
+    background: transparent;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+    color: #ffffff;
+    background: var(--marinho-claro);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Conteúdo principal */
+main {
+    width: min(100% - 2rem, 1000px);
+    margin: 2rem auto;
+    padding: clamp(1.2rem, 4vw, 3rem);
+    background: var(--superficie);
+    border: 1px solid rgba(220, 228, 238, 0.9);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.25;
+}
+
+h1 {
+    margin: 0.3rem 0 1rem;
+    color: var(--marinho);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    margin: 0 0 1.2rem;
+    color: var(--marinho);
+    font-size: clamp(1.45rem, 3vw, 1.9rem);
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    margin: 0 0 1rem;
+    color: inherit;
+    font-size: 1.35rem;
+}
+
+h4 {
+    max-width: 780px;
+    margin: 0 auto 2rem;
+    color: var(--texto-suave);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+}
+
+p {
+    margin: 0 0 1rem;
+    color: var(--texto-suave);
+    line-height: 1.8;
+}
+
+/* Foto principal do portfólio */
+.foto.destaque {
+    width: clamp(140px, 23vw, 200px);
+    aspect-ratio: 1;
+    margin: 1.3rem auto 1.5rem;
+    object-fit: cover;
+    object-position: center;
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--destaque), 0 12px 24px rgba(23, 36, 59, 0.16);
+}
+
+/* Seções */
+#fomacao,
+#Habilidades,
+#Interesses,
+#Projetos {
+    margin: 1.5rem 0;
+    padding: clamp(1.1rem, 3vw, 2rem);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    background: var(--superficie);
+    box-shadow: 0 5px 18px rgba(23, 36, 59, 0.04);
+    text-align: center;
+}
+
+#fomacao {
+    background: linear-gradient(135deg, #f8fbff 0%, #eef8f8 100%);
+    border-top: 4px solid var(--destaque);
+}
+
+#fomacao p {
+    max-width: 760px;
+    margin: 0 auto 1.4rem;
+    text-align: left;
+}
+
+#fomacao img {
+    width: auto;
+    max-width: min(70%, 360px);
+    max-height: 150px;
+    margin: 1rem auto 1.5rem;
+    object-fit: contain;
+}
+
+/* Tabela de habilidades */
+#Habilidades {
+    overflow-x: auto;
+    text-align: left;
+}
+
+#Habilidades h2 {
+    text-align: center;
+}
+
+#Habilidades table {
+    width: 100%;
+    border: 1px solid var(--borda);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+#Habilidades th {
+    padding: 1rem 0.8rem;
+    color: #ffffff;
+    background: var(--marinho);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+#Habilidades td {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--borda);
+    vertical-align: top;
+}
+
+#Habilidades tr:nth-child(even) td {
+    background: #f5f8fc;
+}
+
+#Habilidades tr:hover td {
+    background: #eaf8f7;
+}
+
+#Habilidades ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+#Habilidades li {
+    margin: 0.2rem 0;
+}
+
+/* Interesses */
+#Interesses {
+    border-left: 5px solid var(--destaque);
+    background: #f8fbff;
+}
+
+#Interesses p {
+    margin: 0.65rem auto;
+    max-width: 700px;
+}
+
+/* Projetos */
+#Projetos {
+    background: #f8fbff;
+}
+
+#Academy-Help-desk,
+#Sumula-Xadrez {
+    margin-top: 1.2rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    background: #ffffff;
+    text-align: center;
+}
+
+#Academy-Help-desk > p:first-child,
+#Sumula-Xadrez > p:first-child {
+    margin-bottom: 0.5rem;
+    color: var(--marinho);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+#Projetos .button {
+    margin: 0.25rem 0 0.8rem;
+    padding: 0.7rem 1.1rem;
+    color: #ffffff;
+    background: var(--destaque-escuro);
+    border-radius: 9px;
+}
+
+#Projetos .button:hover {
+    color: #ffffff;
+    background: var(--marinho);
+    transform: translateY(-2px);
+}
+
+#Projetos p {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#Projetos img {
+    width: auto;
+    max-width: 100%;
+    max-height: 420px;
+    margin: 1.1rem auto 0;
+    object-fit: contain;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(23, 36, 59, 0.1);
+}
+
+/* Rodapé e contatos */
+footer {
+    margin-top: 2.5rem;
+    padding: 2.5rem 1.25rem 1.5rem;
+    color: #e9eef7;
+    background: var(--marinho);
+    text-align: center;
+}
+
+footer section {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+footer h3 {
+    color: #ffffff;
+}
+
+footer span {
+    display: inline-block;
+    margin: 0.35rem 0.75rem;
+    color: #e0e7f1;
+    overflow-wrap: anywhere;
+}
+
+footer strong {
+    color: #ffffff;
+}
+
+footer a {
+    color: #75e0d8;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer h5 {
+    margin: 1.6rem 0;
+    color: #bdc8d8;
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+footer .nav {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Ajustes para tablets e celulares */
+@media (max-width: 700px) {
+    main {
+        width: min(100% - 1rem, 1000px);
+        margin: 1rem auto;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .cabecalho {
+        padding: 0.65rem 0.5rem;
+    }
+
+    .nav {
+        gap: 0.25rem;
+    }
+
+    .nav a,
+    .button {
+        padding: 0.55rem 0.7rem;
+        font-size: 0.88rem;
+    }
+
+    #Habilidades {
+        padding: 1rem;
+    }
+
+    #Habilidades table {
+        min-width: 560px;
+    }
+
+    #fomacao img {
+        max-width: 85%;
+    }
+
+    footer span {
+        display: block;
+        margin: 0.65rem 0;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        font-size: 15px;
+    }
+
+    main {
+        padding: 0.85rem;
+    }
+
+    #fomacao,
+    #Habilidades,
+    #Interesses,
+    #Projetos {
+        padding: 1rem 0.8rem;
+    }
+
+    .foto.destaque {
+        width: 140px;
+    }
+}
+
+/* Respeita quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
